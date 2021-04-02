@@ -19,13 +19,11 @@ git clone https://github.com/Guitaryuga/Flask-Guthub-pullschecker.git
 ```
 pip install -r requirements.txt
 ```
-3. Создайте файл config.py и задайте в нем переменные:
+3. Создайте файл .env и задайте в нем переменные окружения:
 ```
-import os
-basedir = os.path.abspath(os.path.dirname(__file__))
-SECRET_KEY = "YOUR_SECRET_KEY"
-LOGIN_NAME = 'YOUR_GITHUB_LOGIN_NAME'
-TOKEN = 'YOUR_TOKEN' (можно получить здесь: https://github.com/settings/tokens - 'Generate new token')
+SECRET_KEY="YOUR_SECRET_KEY"
+LOGIN_NAME='YOUR_GITHUB_LOGIN_NAME'
+TOKEN='YOUR_TOKEN' (можно получить здесь: https://github.com/settings/tokens - 'Generate new token')
 ```
 4.Для запуска используйте существующий run.bat(измените конфигурацию для запуска при необходимости) или другой необходмый вам способ
 ```
