@@ -8,13 +8,13 @@ def CollectingData(username):
     token = app.config['TOKEN']
     headers = {"Accept": "application/vnd.github.v3+json"}
     
-    pulls_merged = requests.get(f'https://api.github.com/search/issues?q=is:pr+author:{username}+archived:false+is:closed+is:merged',
+    pulls_merged = requests.get(f'https://api.github.com/search/issues?q=is:pr+author:{username}+archived:false+is:closed+is:merged&per_page=100',
                                 auth=(login_name, token),
                                 headers=headers).json()
-    pulls_unmerged = requests.get(f'https://api.github.com/search/issues?q=is:pr+author:{username}+archived:false+is:closed+is:unmerged',
+    pulls_unmerged = requests.get(f'https://api.github.com/search/issues?q=is:pr+author:{username}+archived:false+is:closed+is:unmerged&per_page=100',
                                   auth=(login_name, token),
                                   headers=headers).json()
-    pulls_open = requests.get(f'https://api.github.com/search/issues?q=is:pr+author:{username}+archived:false+is:open',
+    pulls_open = requests.get(f'https://api.github.com/search/issues?q=is:pr+author:{username}+archived:false+is:open&per_page=100',
                               auth=(login_name, token),
                               headers=headers).json()
 
